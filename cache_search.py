@@ -1,5 +1,5 @@
 
-import os
+import subprocess
 import requests
 
 def cache_search(purl, email):
@@ -18,8 +18,7 @@ def cache_search(purl, email):
             print "\033[98m [*]   Got It !!! Dump found in google cache for email account : "+purl
             print "\033[94m"+"=============================================================================================================="
             print '\033[92m'
-            os.system('invoke_phantom.sh get_cache.js "'+url+'" local_cache.txt')
+            subprocess.call('invoke_phantom.sh get_cache.js "'+url+'" local_cache.txt')
         else:
             print '\n \033[31m Could not find data dump in archives \n'
-
     
