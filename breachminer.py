@@ -2,7 +2,6 @@
 
 import requests
 import urllib
-import subprocess
 import os.path
 import xml.etree.ElementTree as ET
 from cache_search import cache_search
@@ -31,7 +30,7 @@ BaseUrl = 'https://haveibeenpwned.com/api/v2/pasteaccount/'
 
 def invokeHarvester(domain):
     print '\033[93m [*] Running with configuration : -l 500 -b google '
-    subprocess.call('theharvester -d '+domain+' -l 500 -b google -f harv_output.xml')
+    os.system('theharvester -d '+domain+' -l 500 -b google -f harv_output.xml')
     tree = ET.parse('harv_output.xml')
     with open('harv_emails.txt', "w") as f:
         for elem in tree.iter(tag='email'):
@@ -44,7 +43,7 @@ def exit_gracefully():
 
 def invokeBM(EmailList):
     print EmailList
-    subprocess.call('clear')
+    os.system('clear')
     print banner
     print ("|n")
     #choice = raw_input("\033[92m Do you want to go for a detailed analysis \033[93m[Y/N] : ")
@@ -101,13 +100,13 @@ def invokeBM(EmailList):
                                     print "\033[94m"+"=============================================================================================================="
                                     CurrPath =  os.getcwd()+'/tmp.txt'
                                     grab = str('wget '+purl+' -O  '+CurrPath+' > /dev/null 2>&1')
-                                    subprocess.call(grab)
+                                    os.system(grab)
                                     #CredMiner(CurrPath, email)
                                     print '\033[92m'
-                                    subprocess.call('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
+                                    os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                     if os.path.exists(CurrPath):
-                                        #subprocess.call('mv '+CurrPath+' tmp.txt.bkp')
-                                        subprocess.call('rm '+CurrPath)
+                                        #os.system('mv '+CurrPath+' tmp.txt.bkp')
+                                        os.system('rm '+CurrPath)
                                     
                                 else:
                                     print "\n \033[31m [*] Sorry !!! The pastebin dumb seems to be missing at "+source+"/"+did+"  :( "
@@ -134,13 +133,13 @@ def invokeBM(EmailList):
                                     print "\033[94m"+"=============================================================================================================="
                                     CurrPath =  os.getcwd()+'/tmp.txt'
                                     grab = str('wget '+purl+' -O  '+CurrPath+' > /dev/null 2>&1')
-                                    subprocess.call(grab)
+                                    os.system(grab)
                                     #CredMiner(CurrPath, email)
                                     print '\033[92m'
-                                    subprocess.call('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
+                                    os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                     if os.path.exists(CurrPath):
-                                        #subprocess.call('mv '+CurrPath+' tmp.txt.bkp')
-                                        subprocess.call('rm '+CurrPath)
+                                        #os.system('mv '+CurrPath+' tmp.txt.bkp')
+                                        os.system('rm '+CurrPath)
                                         
                                 else:
                                     print "\n \033[31m [*] Sorry !!! The pastebin dumb seems to be missing at "+source+"/"+did+"  :( "
@@ -167,13 +166,13 @@ def invokeBM(EmailList):
                                     print "\033[94m"+"=============================================================================================================="
                                     CurrPath =  os.getcwd()+'/tmp.txt'
                                     grab = str('wget '+purl+' -O  '+CurrPath+' > /dev/null 2>&1')
-                                    subprocess.call(grab)
+                                    os.system(grab)
                                     #CredMiner(CurrPath, email)
                                     print '\033[92m'
-                                    subprocess.call('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
+                                    os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                     if os.path.exists(CurrPath):
-                                        #subprocess.call('mv '+CurrPath+' tmp.txt.bkp')
-                                        subprocess.call('rm '+CurrPath)
+                                        #os.system('mv '+CurrPath+' tmp.txt.bkp')
+                                        os.system('rm '+CurrPath)
                                     
                                 else:
                                     print "\n \033[31m [*] Sorry !!! The pastebin dumb seems to be missing at "+source+"/"+did+"  :( "
@@ -188,7 +187,7 @@ def invokeBM(EmailList):
     f.close()
                             
 if __name__ == "__main__":
-    subprocess.call('clear')
+    os.system('clear')
     print banner
     
     try:
