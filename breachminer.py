@@ -230,7 +230,7 @@ if __name__ == "__main__":
         
         domain = sys.argv[1]
         if os.path.isdir("Files"):
-        print ''
+            print ''
         else:
             os.system('mkdir -p Files')
         invokeHarvester(domain)
