@@ -229,7 +229,7 @@ if __name__ == "__main__":
     try:
         
         domain = sys.argv[1]
-        if os.path.isdir("Files""):
+        if os.path.isdir("Files"):
         print ''
         else:
             os.system('mkdir -p Files')
