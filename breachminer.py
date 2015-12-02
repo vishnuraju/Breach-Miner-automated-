@@ -9,6 +9,7 @@ from create_html import create_html, invokeBrowser
 import sys
 import subprocess
 import time
+import os.path
 
    
 print "\033[31m \n"            
@@ -226,7 +227,12 @@ if __name__ == "__main__":
     print banner
     
     try:
+        
         domain = sys.argv[1]
+        if os.path.isdir("Files""):
+        print ''
+        else:
+            os.system('mkdir -p Files')
         invokeHarvester(domain)
         EmailList = 'harv_emails.txt'
         invokeBM(EmailList)
