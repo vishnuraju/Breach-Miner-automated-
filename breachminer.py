@@ -112,13 +112,18 @@ def invokeBM(EmailList):
                                             os.system(grab)
                                             #CredMiner(CurrPath, email)
                                             print '\033[92m'
-                                            #os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
+                                            os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                             p = subprocess.Popen('cat '+CurrPath+' | grep -B 1 -A 1 '+email, stdout=subprocess.PIPE, shell=True)
                                             (output, err) = p.communicate()
+                                            p1 = subprocess.Popen('cat '+CurrPath+' | grep '+email, stdout=subprocess.PIPE, shell=True)
+                                            (output1, err1) = p1.communicate()
+                                            #print output
                                             res.write('<div style="color: #1aff1a;"">')
                                             res.write('<h4>Data for email account : %s </h4>'%email)
                                             print '\033[31m'
                                             res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output))
+                                            res.write('<p> [*] More Accurate Details : ')
+                                            res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output1))
                                             res.write('</div><br>')
                                             print 'HTML file saved in '+os.getcwd()+'/Files/Results.html'
                                             if os.path.exists(CurrPath):
@@ -156,10 +161,15 @@ def invokeBM(EmailList):
                                             os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                             p = subprocess.Popen('cat '+CurrPath+' | grep -B 1 -A 1 '+email, stdout=subprocess.PIPE, shell=True)
                                             (output, err) = p.communicate()
+                                            p1 = subprocess.Popen('cat '+CurrPath+' | grep '+email, stdout=subprocess.PIPE, shell=True)
+                                            (output1, err1) = p1.communicate()
+                                            #print output
                                             res.write('<div style="color: #1aff1a;"">')
                                             res.write('<h4>Data for email account : %s </h4>'%email)
                                             print '\033[31m'
                                             res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output))
+                                            res.write('<p> [*] More Accurate Details : ')
+                                            res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output1))
                                             res.write('</div><br>')
                                             print 'HTML file saved in '+os.getcwd()+'/Files/Results.html'
                                             if os.path.exists(CurrPath):
@@ -197,10 +207,15 @@ def invokeBM(EmailList):
                                             os.system('cat '+CurrPath+' | grep -B 1 -A 1 '+email)
                                             p = subprocess.Popen('cat '+CurrPath+' | grep -B 1 -A 1 '+email, stdout=subprocess.PIPE, shell=True)
                                             (output, err) = p.communicate()
+                                            p1 = subprocess.Popen('cat '+CurrPath+' | grep '+email, stdout=subprocess.PIPE, shell=True)
+                                            (output1, err1) = p1.communicate()
+                                            #print output
                                             res.write('<div style="color: #1aff1a;"">')
                                             res.write('<h4>Data for email account : %s </h4>'%email)
                                             print '\033[31m'
                                             res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output))
+                                            res.write('<p> [*] More Accurate Details : ')
+                                            res.write('<p> [*] The dump may be found at %s.\033[92m <br> [*] Details : <br> %s </p>'%(purl1, output1))
                                             res.write('</div><br>')
                                             print 'HTML file saved in '+os.getcwd()+'/Files/Results.html'
                                             if os.path.exists(CurrPath):
