@@ -4,7 +4,8 @@ Breach Miner Modified for sn1per
 
 #Usage: 
 
-./breachminer [domain you need to mine]
+./breachminer [domain]
+eg:- ./breachminer example.com
 
 # Breach-Miner
 https://github.com/secworld/Breach-Miner
